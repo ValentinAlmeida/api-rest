@@ -16,6 +16,13 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request)
     {
+        $image = $request->file('image');
+
+//        if ($image)
+//        {
+//            $path = $image->store('image', 'public');
+//        }
+
         return Product::create($request->validated());
     }
 
@@ -33,6 +40,7 @@ class ProductController extends Controller
 
     public function destroy(Product $id)
     {
+        $id->delete();
         return $id;
     }
 

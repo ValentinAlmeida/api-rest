@@ -17,7 +17,7 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        return User::created($request->validated());
+        return User::create($request->validated());
     }
 
 
@@ -37,6 +37,7 @@ class UserController extends Controller
 
     public function destroy(User $id)
     {
+        $id->delete();
         return $id;
     }
 

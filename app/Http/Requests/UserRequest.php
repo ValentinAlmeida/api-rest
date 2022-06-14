@@ -25,15 +25,7 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'email' => 'required|string|email',
-            'password' =>
-                'required',
-            'string',
-            'min:8',             // 8 characters de tamanho
-            'regex:/[a-z]/',      // pelo menos uma letra minuscula
-            'regex:/[A-Z]/',      // pelo menos uma letra maiuscula
-            'regex:/[0-9]/',      // pelo menos um numero
-            'regex:/[@$!%*#?&]/', // pelo menos um caractere especial
+            'password' => 'required'
         ];
     }
 }

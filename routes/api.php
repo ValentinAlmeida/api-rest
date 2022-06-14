@@ -17,14 +17,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 Route::post('/auth/login', [AuthController::class, 'login']);
-Route::get('/products/{id}', [ProductController::class, 'show']);
-Route::get('/users/{id}', [UserController::class, 'show']);
-Route::get('/products/search/{name}', [ProductController::class, 'search']);
-Route::get('/users/search/{name}', [UserController::class, 'search']);
-Route::get('/users', [UserController::class, 'index']);
 Route::post('/users', [UserController::class, 'store']);
-Route::put('/users/{id}', [UserController::class, 'update']);
-Route::delete('/users/{id}', [UserController::class, 'destroy']);
 
 Route::group(['middleware' => ['auth']], function ()
 {
@@ -33,5 +26,11 @@ Route::group(['middleware' => ['auth']], function ()
     Route::put('/products/{product}', [ProductController::class, 'update']);
     Route::delete('/products/{id}', [ProductController::class, 'destroy']);
     Route::apiResource('/products', ProductController::class);
-
+    Route::get('/products/{id}', [ProductController::class, 'show']);
+    Route::get('/users/{id}', [UserController::class, 'show']);
+    Route::get('/products/search/{name}', [ProductController::class, 'search']);
+    Route::get('/users/search/{name}', [UserController::class, 'search']);
+    Route::get('/users', [UserController::class, 'index']);
+    Route::put('/users/{id}', [UserController::class, 'update']);
+    Route::delete('/users/{id}', [UserController::class, 'destroy']);
 });

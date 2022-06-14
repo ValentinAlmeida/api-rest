@@ -20,12 +20,5 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-        \App\Models\Employee::create([
-            'name' => 'Usuário de teste',
-            'email' => 'usuario@teste.com.br',
-            'password' => bcrypt( 'senha123' ),
-            'job_title' => 'Gerente administrativo'
-        ]);
     }
 }
