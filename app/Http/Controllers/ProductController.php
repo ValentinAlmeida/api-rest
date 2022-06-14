@@ -31,11 +31,10 @@ class ProductController extends Controller
         return $id;
     }
 
-    public function update(Request $request, Product $product)
+    public function update(StoreProductRequest $request, Product $id)
     {
-        $product->update($request->all());
-
-        return $product;
+        $id->update($request->all());
+        return $id;
     }
 
     public function destroy(Product $id)
